@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Maze — finishing sign-in</title><link rel="stylesheet" href="style.css">
+</head><body><main>
+<h1>Finishing sign-in…</h1>
+<p class="sub" id="msg">Handing you back to Maze on your own computer.</p>
+<p id="manual" hidden>
+  Maze doesn't seem to be running. Start it with <code>npm start</code>, then
+  <a id="retry" href="#">click here</a>.
+</p>
+<footer>
+  This page only passes the sign-in result to Maze running on your own machine.
+  Nothing is stored here and nothing is sent anywhere else.
+</footer>
+
+<script>
+// TikTok will not redirect to http://localhost, so it redirects here instead
+// and this page hands the one-time code straight back to the app on the Mac.
+// Browsers allow a top-level navigation from https to http://localhost, which
+// is what makes this work. The code is used once, by the local app, and never
+// leaves the two of them.
+(function () {
+  var PORT = 4321;
+  var params = new URLSearchParams(location.search);
+  var port = params.get('port');
+  if (port && /^\d{2,5}$/.test(port)) PORT = port;
+
+  var target = 'http://localhost:' + PORT + '/auth/tiktok/callback' + location.search;
+
+  if (params.get('error')) {
+    document.getElementById('msg').textContent =
+      'TikTok reported: ' + (params.get('error_description') || params.get('error'));
+    return;
+  }
+  if (!params.get('code')) {
+    document.getElementById('msg').textContent =
+      'No sign-in code came back from TikTok. Start again from Maze.';
+    return;
+  }
+
+  document.getElementById('retry').href = target;
+  // If the app isn't listening the browser stays here, so offer the link.
+  setTimeout(function () { document.getElementById('manual').hidden = false; }, 2500);
+  location.replace(target);
+})();
+</script>
+</main></body></html>
