@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Maze — Privacy Policy</title><link rel="stylesheet" href="style.css"></head>
+<body><main>
+<nav><a href="index.html">← Maze</a></nav>
+<h1>Privacy Policy</h1>
+<p class="sub">Last updated 11 September 2026</p>
+
+<h2>The short version</h2>
+<p>Maze runs entirely on the operator's own computer. It has no servers, no database and no
+analytics. It collects no information from anyone, because nobody else uses it. Nothing is
+sold, shared or transmitted anywhere except directly to Google and TikTok in order to
+perform the uploads the operator asked for.</p>
+
+<h2>What is stored, and where</h2>
+<p>All of the following is stored in files on the operator's own computer. None of it
+leaves that computer except as described below.</p>
+<ul>
+  <li><strong>Access tokens</strong> for the connected Google and TikTok accounts, used to
+      upload on the operator's behalf. TikTok access tokens expire roughly daily and are
+      refreshed automatically.</li>
+  <li><strong>The video queue</strong> — titles, descriptions, tags and links — which lives
+      in the operator's own Google Sheet.</li>
+  <li><strong>Video files</strong>, temporarily, while an upload is in progress. They are
+      deleted once the upload finishes.</li>
+  <li><strong>A local log</strong> of what was published and when, for troubleshooting.</li>
+</ul>
+
+<h2>What is not collected</h2>
+<ul>
+  <li>No personal information about any other person.</li>
+  <li>No TikTok or YouTube viewer, follower or audience data.</li>
+  <li>No analytics, telemetry, tracking or advertising identifiers.</li>
+  <li>No cookies, beyond the session the operator's own browser uses to view the local
+      dashboard at <code>localhost</code>.</li>
+</ul>
+
+<h2>Who the data is shared with</h2>
+<p>Nobody. Data is transmitted only to the APIs required to do the work the operator
+requested — Google (YouTube, Sheets and Drive) and TikTok — and only content and metadata
+the operator entered themselves. There are no other recipients, no third-party processors
+and no sale or disclosure of data to anyone.</p>
+
+<h2>TikTok data</h2>
+<p>Maze requests a single TikTok permission, <code>video.publish</code>, which allows it to
+upload videos to the connected account. It does not read posts, profile details, followers,
+messages or analytics. The only TikTok information retained is the access token, the
+refresh token and the account's display name, all held locally so uploads can continue
+without signing in again.</p>
+
+<h2>Retention and deletion</h2>
+<p>Tokens are kept until the operator disconnects the account in Maze, revokes access in
+the platform's own settings, or deletes the local token file. Either action ends Maze's
+access immediately and permanently. Temporary video files are deleted after each upload.
+The queue can be cleared at any time by editing or deleting the Google Sheet.</p>
+
+<h2>Security</h2>
+<p>Tokens are stored in files readable only by the operator's own user account on their own
+machine. The dashboard listens only on <code>localhost</code> and is not reachable from the
+internet.</p>
+
+<h2>Children</h2>
+<p>Maze is not directed at children and is not used by anyone other than its operator.</p>
+
+<h2>Changes</h2>
+<p>This policy may be updated. The date at the top of this page reflects the current
+version.</p>
+
+<h2>Contact</h2>
+<p>Questions about privacy, or requests relating to data:
+<a href="mailto:YOUR-EMAIL@example.com">YOUR-EMAIL@example.com</a></p>
+
+<footer>Maze — personal publishing tool. <a href="terms.html">Terms of Service</a></footer>
+</main></body></html>
